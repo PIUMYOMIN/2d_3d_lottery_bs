@@ -13,6 +13,7 @@
   <div class="container overflow-hidden">
     <div class="col-lg-6 col-md-10 mx-auto">
       <div class="row g-md-2">
+        <!-- nav bar  -->
         <nav class="navbar navbar-expand-lg text-white p-3" data-bs-theme="dark">
           <div class="container d-flex flex-row justify-content-between align-items-center">
             <div>
@@ -30,6 +31,8 @@
             </div>
           </div>
         </nav>
+        <!-- nav bar  -->
+        <!-- content  -->
         <div class="main-content position-relative overflow-hidden z-3">
           <!-- side bar  -->
           <div class="sidebar">
@@ -102,34 +105,115 @@
           </div>
           <!-- side bar  -->
 
-          <!-- Subnav -->
-          <div class="d-flex justify-content-around text-white shadow rounded-4 py-4 mb-4">
-            <a href="../pages/2d_history.html" class="text-center text-white text-decoration-none text-white">
-              <img src="../asset/img/history.svg" class="img-fluid" alt="">
-              <p class="mb-0">မှတ်တမ်း</p>
-            </a>
-            <a href="../pages/2d_result.html" class="text-center text-white text-decoration-none text-white">
-              <img src="../asset/img/results.svg" class="img-fluid" alt="">
-              <p class="mb-0">ရလဒ်</p>
-            </a>
-            <a href="./2d_winner_page.html" class="text-center text-white text-decoration-none text-white">
-              <img src="../asset/img/winners.svg" class="img-fluid" alt="">
-              <p class="mb-0">ကံထူးရှင်များ</p>
-            </a>
-          </div>
           <!-- Winner result -->
-          <div class="row my-4">
+          <div class="row my-4" style="border: 1px solid gray;">
             <div class="col-12 text-center text-white">
-              <h1 class="text-warning" style=" font-size: 90px;" id="live_2d">00</h1>
+              <h1 class="text-warning" style="font-size: 90px;" id="live_2d">07</h1>
               <p>Updated: <span id="live_updated_time">10-0-2023 4:30:00PM</span></p>
             </div>
-            <div class="col-12 text-center">
-              <a href="./2d_numbers.html" class="btn btn-secondary text-white">ထိုးမည်</a>
-            </div>
           </div>
-          <!-- 2D lists -->
-          <div class="row" style="margin-bottom: 80px;" id="result"></div>
+
+          <div>
+            <table class="table table-dark table-striped-columns">
+              <thead>
+                <tr>
+                  <td>AM</td>
+                  <td>BTC</td>
+                  <td>ETH</td>
+                  <td>2D</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  ??
+                </td>
+              </tr>
+            </table>
+            <table class="table table-dark table-striped-columns">
+              <thead>
+                <tr>
+                  <td>PM</td>
+                  <td>BTC</td>
+                  <td>ETH</td>
+                  <td>2D</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  ??
+                </td>
+              </tr>
+            </table>
+            <table class="table table-dark table-striped-columns">
+              <thead>
+                <tr>
+                  <td>PM</td>
+                  <td>BTC</td>
+                  <td>ETH</td>
+                  <td>2D</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  ??
+                </td>
+              </tr>
+            </table>
+            <table class="table table-dark table-striped-columns">
+              <thead>
+                <tr>
+                  <td>PM</td>
+                  <td>BTC</td>
+                  <td>ETH</td>
+                  <td>2D</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  452,121
+                </td>
+                <td>
+                  ??
+                </td>
+              </tr>
+            </table>
+          </div>
+
         </div>
+        <!-- content  -->
         <!-- footer  -->
         <div class="mt-3 py-3 rounded-top-4 mx-auto info-card">
           <div class="list-group d-flex flex-row flex-wrap justify-content-between align-items-center">
@@ -161,14 +245,15 @@
               </a>
             </div>
             <div class="bg-transparent border-0 col-md-2 mb-3">
-              <a href="#!" class="text-white text-decoration-none d-flex flex-column justify-content-center align-items-center">
+              <a href="#!"
+                class="text-white text-decoration-none d-flex flex-column justify-content-center align-items-center">
                 <div>
                   <img src="../asset/img/profile.svg" class="img-fluid rounded-top" alt="">
                 </div>
                 ပရိုဖိုင်
               </a>
             </div>
-            </div>
+          </div>
         </div>
         <!-- footer  -->
       </div>
@@ -176,71 +261,47 @@
   </div>
 
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="../vendor/script.js" type="text/javascript"></script>
   <script>
     (function () {
-        const fetchData = () => {
-          const url = 'https://api.thaistock2d.com/live';
+      const fetchData = () => {
+        const url = 'https://api.thaistock2d.com/live';
 
-          fetch(url)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              return response.json();
-            })
-            .then(data => {
-              const updatedTime = new Date(data.live.time);
-              const day = updatedTime.getDate().toString().padStart(2, '0');
-              const month = (updatedTime.getMonth() + 1).toString().padStart(2, '0');
-              const year = updatedTime.getFullYear();
-              let hours = updatedTime.getHours();
-              const minutes = updatedTime.getMinutes();
-              const ampm = hours >= 12 ? 'PM' : 'AM';
-              hours = hours % 12;
-              hours = hours ? hours : 12;
-              const updatedTimeFormat = `${day}-${month}-${year} ${hours}:${minutes.toString().padStart(2, '0')}:${updatedTime.getSeconds().toString().padStart(2, '0')}${ampm}`;
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            const updatedTime = new Date(data.live.time);
+            const day = updatedTime.getDate().toString().padStart(2, '0');
+            const month = (updatedTime.getMonth() + 1).toString().padStart(2, '0');
+            const year = updatedTime.getFullYear();
+            let hours = updatedTime.getHours();
+            const minutes = updatedTime.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const updatedTimeFormat = `${day}-${month}-${year} ${hours}:${minutes.toString().padStart(2, '0')}:${updatedTime.getSeconds().toString().padStart(2, '0')}${ampm}`;
 
-              document.getElementById("live_2d").textContent = data.live.twod;
-              document.getElementById("live_updated_time").textContent = updatedTimeFormat;
+            document.getElementById("live_2d").textContent = data.live.twod;
+            document.getElementById("live_updated_time").textContent = updatedTimeFormat;
+            document.getElementById("result").innerHTML = newHTML;
+          })
+          .catch(error => {
+            null
+          });
+      };
 
-              let newHTML = '';
-              data.result.forEach(r => {
-                newHTML += `
-            <div class="col-12 col-md-6">
-              <div class="digit-card mb-1 rounded-4 mb-2"> 
-                <h5 class="text-center text-white">${r.open_time}</h5>
-                <table class="table table-dark table-striped-columns">
-                  <tr>
-                    <td>Set</td>
-                    <td>${r.set}</td>
-                  </tr>
-                  <tr>
-                    <td>Value</td>
-                    <td>${r.set}</td>
-                  </tr>
-                  <tr>
-                    <td>2D</td>
-                    <td>${r.twod}</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          `;
-              });
-              document.getElementById("result").innerHTML = newHTML;
-            })
-            .catch(error => {
-              document.getElementById("result").innerHTML = '<div>Error fetching data</div>';
-            });
-        };
-
-        setInterval(fetchData, 1000);
-      })();
+      setInterval(fetchData, 1000);
+    })();
 
   </script>
 
 </body>
+
+</html>
 
 </html>
