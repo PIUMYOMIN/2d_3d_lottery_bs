@@ -7,9 +7,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function toggleForm() {
+function quickPickupNumbers() {
+  const quick_pickup_numbers = document.querySelector(".quick_pickup_numbers");
+  quick_pickup_numbers.classList.toggle("active");
+}
+
+function selectedNumbers() {
   const formContainer = document.querySelector(".form-container");
   formContainer.classList.toggle("active");
+}
+
+function closeQuickPickupForm() {
+  const quick_pickup_numbers = document.querySelector(".quick_pickup_numbers");
+  quick_pickup_numbers.classList.remove("active");
 }
 
 function closeForm() {
